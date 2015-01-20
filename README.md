@@ -14,7 +14,7 @@ hostx
 ~搞定 O(∩_∩)O~
 
 
-清除已经更新的 hosts：
+如果想清除已经更新的 hosts：
 
     hostx -c
 
