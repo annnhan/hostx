@@ -1,0 +1,23 @@
+{
+  "name": "hostx",
+  "version": "0.0.0",
+  "description": "update hosts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hosts"
+  ],
+  "author": "hanan",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hanan198501/hostx.git"
+  },
+  "author": "韩安",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanan198501/hostx/issues"
+  }
+}
