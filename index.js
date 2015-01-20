@@ -7,6 +7,7 @@ var fs = require('fs');
 var http = require('http');
 var https = require('https');
 
+
 var URLS = [
     'http://www.racalinux.cn/hosts.txt',
     'https://github.com/racaljk/hosts/blob/master/hosts',
@@ -42,14 +43,7 @@ var hostx = {
             return group + n + hosts + n + group;
         }.bind(this));
 
-        fs.writeFile(hostsFile, newHost, function (err) {
-            if (err) {
-                console.error('权限不够，请修改hosts文件为可读，或使用 sudo 身份运行此命令。');
-            }
-            else {
-                console.log('恭喜，hosts 更新成功！');
-            }
-        });
+        fs.writeFile(hostsFile, newHost, this._callback('恭喜，更新 hosts 成功！'));
     },
 
     filter: function (obj) {
@@ -92,6 +86,7 @@ var hostx = {
         }).on('error', function (e) {
             if (++self.errors == URLS.length && self.status == 0) {
                 console.error('更新失败！');
+                process.exit();
             }
             pm.reject(e);
         });
@@ -100,6 +95,25 @@ var hostx = {
 
     backup: function () {
         fs.writeFileSync('./hosts.bak', fs.readFileSync(hostsFile));
+    },
+
+    clear: function () {
+        fs.writeFile(hostsFile, fs.readFileSync(hostsFile).toString().replace(new RegExp(group + '[\n\r\n]([\\S\\s]*?)' + group, 'g'), function (macth, host) {
+            return group + n + group;
+        }.bind(this)), this._callback('hosts 清除成功！'));
+
+    },
+
+    _callback: function (txt) {
+        return function (err) {
+            if (err) {
+                console.error('权限不够，请修改hosts文件为可读，或使用 sudo 身份运行此命令。');
+            }
+            else {
+                console.log(txt);
+            }
+            process.exit();
+        }
     }
 }
 

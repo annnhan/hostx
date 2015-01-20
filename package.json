@@ -1,6 +1,6 @@
 {
   "name": "hostx",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "update hosts",
   "main": "index.js",
   "bin": "bin/cli.js",
@@ -10,15 +10,16 @@
   "keywords": [
     "hosts"
   ],
-  "author": "hanan",
+  "author": "韩安",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/hanan198501/hostx.git"
   },
-  "author": "韩安",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/hanan198501/hostx/issues"
+  },
+  "dependencies": {
+    "optimist": "^0.6.1"
   }
 }

@@ -27,6 +27,14 @@ hostx
 
 使用：
 
-    sudo hostx
+    hostx
 
-hostx 会把最新的hosts写入到两个 `#==== google` 之间的位置。
+如上，会把最新的hosts写入到两个 `#==== google` 之间的位置。
+
+清除掉已经更新的 hosts：
+
+    hostx -c
+
+查看帮助：
+
+    hostx -h
