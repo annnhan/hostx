@@ -39,7 +39,7 @@ var hostx = {
     update: function (hosts) {
         var oldHost = fs.readFileSync(hostsFile).toString();
         var newHost = oldHost.replace(new RegExp(group + '[\n\r\n]([\\S\\s]*?)' + group, 'g'), function (macth, host) {
-            return group + n + hosts + n + group + n;
+            return group + n + hosts + n + group;
         }.bind(this));
 
         fs.writeFile(hostsFile, newHost, function (err) {
