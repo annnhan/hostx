@@ -10,10 +10,10 @@ var https = require('https');
 
 var URLS = [
     'http://www.racalinux.cn/hosts.txt',
-    'https://github.com/racaljk/hosts/blob/master/hosts',
-    'https://raw.githubusercontent.com/zxdrive/imouto.host/master/imouto.host.txt',
-    'http://freedom.txthinking.com/hosts',
-    'http://laod.cn/wp-content/uploads/2014/11/imouto.host_.txt'
+    'https://github.com/racaljk/hosts/blob/master/hosts'
+    //'https://raw.githubusercontent.com/zxdrive/imouto.host/master/imouto.host.txt',
+    //'http://freedom.txthinking.com/hosts',
+    //'http://laod.cn/wp-content/uploads/2014/11/imouto.host_.txt'
 ]
 
 var hostsFile = process.platform == 'win32' ? 'C:\\Windows\\System32\\drivers\\etc\\hosts' : '/etc/hosts';
