@@ -104,7 +104,7 @@ var hostx = {
     _callback: function (txt) {
         return function (err) {
             if (err) {
-                console.error('权限不够，请修改hosts文件为可读，或使用 sudo 身份运行此命令。');
+                console.error('权限不够！请修改hosts文件为可写入，或使用 sudo 身份运行此命令。');
             }
             else {
                 console.log(txt);
