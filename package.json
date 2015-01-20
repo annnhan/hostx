@@ -1,6 +1,6 @@
 {
   "name": "hostx",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "update hosts",
   "main": "index.js",
   "bin": "bin/cli.js",

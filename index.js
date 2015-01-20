@@ -18,7 +18,7 @@ var URLS = [
 
 var hostsFile = process.platform == 'win32' ? 'C:\\Windows\\System32\\drivers\\etc\\hosts' : '/etc/hosts';
 var n = process.platform == 'win32' ? '\r\n' : '\n';
-var group = '#==== google';
+var group = '#==== hostx';
 var groupReg = new RegExp(group + '[\n\r\n]([\\S\\s]*?)' + group, 'g');
 
 var hostx = {
