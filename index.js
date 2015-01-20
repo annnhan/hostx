@@ -104,5 +104,3 @@ var hostx = {
 }
 
 module.exports = hostx;
-
-hostx.run();
