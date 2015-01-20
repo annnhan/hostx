@@ -10,7 +10,8 @@ var https = require('https');
 
 var URLS = [
     'http://www.racalinux.cn/hosts.txt',
-    'https://github.com/racaljk/hosts/blob/master/hosts'
+    'https://github.com/racaljk/hosts/blob/master/hosts',
+    'http://serve.netsh.org/pub/hosts.php?passcode=14162&gs=on&wk=on&twttr=off&fb=off&flkr=off&dpbx=off&odrv=off&yt=off&nolh=on'
     //'https://raw.githubusercontent.com/zxdrive/imouto.host/master/imouto.host.txt',
     //'http://freedom.txthinking.com/hosts',
     //'http://laod.cn/wp-content/uploads/2014/11/imouto.host_.txt'
