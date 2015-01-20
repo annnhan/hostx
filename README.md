@@ -7,7 +7,7 @@ hostx
 
     npm install -g hostx
 
-在你的hosts文件新增一个分组：`#==== google`，用于hostx把更新的hosts地址写入到该分组中。
+在你的hosts文件新增一个google分组：`#==== google`，用于hostx把更新的hosts地址写入到该分组中。（如果没有分组，则写入hosts文件的末尾）。
 
 例如：
 
@@ -31,7 +31,7 @@ hostx
 
 如上，会把最新的hosts写入到两个 `#==== google` 之间的位置。
 
-清除掉已经更新的 hosts：
+清除掉已经更新到google分组的 hosts：
 
     hostx -c
 

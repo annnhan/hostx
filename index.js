@@ -19,6 +19,7 @@ var URLS = [
 var hostsFile = process.platform == 'win32' ? 'C:\\Windows\\System32\\drivers\\etc\\hosts' : '/etc/hosts';
 var n = process.platform == 'win32' ? '\r\n' : '\n';
 var group = '#==== google';
+var groupReg = new RegExp(group + '[\n\r\n]([\\S\\s]*?)' + group, 'g');
 
 var hostx = {
 
@@ -39,9 +40,8 @@ var hostx = {
 
     update: function (hosts) {
         var oldHost = fs.readFileSync(hostsFile).toString();
-        var newHost = oldHost.replace(new RegExp(group + '[\n\r\n]([\\S\\s]*?)' + group, 'g'), function (macth, host) {
-            return group + n + hosts + n + group;
-        }.bind(this));
+        var newHost = groupReg.test(oldHost) ?
+            oldHost.replace(groupReg, group + n + hosts + n + group) : oldHost + n + group + n + hosts + n + group;
 
         fs.writeFile(hostsFile, newHost, this._callback('恭喜，更新 hosts 成功！'));
     },
@@ -98,10 +98,7 @@ var hostx = {
     },
 
     clear: function () {
-        fs.writeFile(hostsFile, fs.readFileSync(hostsFile).toString().replace(new RegExp(group + '[\n\r\n]([\\S\\s]*?)' + group, 'g'), function (macth, host) {
-            return group + n + group;
-        }.bind(this)), this._callback('hosts 清除成功！'));
-
+        fs.writeFile(hostsFile, fs.readFileSync(hostsFile).toString().replace(groupReg, group + n + group), this._callback('hosts 清除成功！'));
     },
 
     _callback: function (txt) {
