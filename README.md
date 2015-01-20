@@ -5,7 +5,7 @@ hostx
 
 安装：
 
-    npm install hostx -g
+    npm install -g hostx
 
 在你的hosts文件新增一个分组：`#==== google`，用于hostx把更新的hosts地址写入到该分组中。
 
