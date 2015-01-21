@@ -51,16 +51,15 @@ var hostx = {
         var host = '',
             url = obj.url,
             result = obj.result;
-        switch (url) {
-            case 'https://github.com/racaljk/hosts/blob/master/hosts':
-                var tds = result.match(/<td id="LC\d+" class="blob-code js-file-line">\.+<\/td>/);
-                tds.forEach(function (td) {
-                    host += (td.replace(/<\.+?>/, '') + n);
-                });
-                break;
-            default :
-                host = result;
-                break;
+
+        if (/^https:\/\/github\.com/.test(url)) {
+            var tds = result.match(/<td id="LC\d+" class="blob-code js-file-line">.+<\/td>/g);
+            tds.forEach(function (td) {
+                host += (td.replace(/<.+?>/g, '') + n);
+            });
+        }
+        else {
+            host = result;
         }
         host = host.replace(/#.*?(\n|\r\n)/g, '');
         return host
