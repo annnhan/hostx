@@ -11,7 +11,9 @@ hostx
 
     hostx
 
-~搞定 O(∩_∩)O~
+指定一个在线的hosts列表更新
+
+    hostx -u http://laod.cn/wp-content/uploads/2014/11/imouto.host_.txt
 
 
 如果想清除已经更新的 hosts：

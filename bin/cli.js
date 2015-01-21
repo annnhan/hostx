@@ -7,11 +7,11 @@ if (argv.c) {
 }
 else if (argv.h) {
     console.log(
-        'Usage: hostx       更新hosts\n' +
-        '   or: hostx -c    清除更新的hosts \n' +
-        '   or: hostx -h    查看帮助 \n'
+        'Usage: hostx [-u url]      更新hosts\n' +
+        '   or: hostx -c            清除更新的hosts \n' +
+        '   or: hostx -h            查看帮助 \n'
     );
 }
 else {
-    hostx.run();
+    hostx.run(argv.u);
 }

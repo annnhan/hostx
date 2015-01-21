@@ -27,13 +27,14 @@ var hostx = {
 
     errors: 0,
 
-    run: function () {
+    run: function (url) {
         var filter = this.filter.bind(this);
         var update = this.update.bind(this);
+        var urls = url ? [url] : URLS;
 
         this.backup();
 
-        URLS.forEach(function (url) {
+        urls.forEach(function (url) {
             this.get(url).then(filter).then(update);
         }.bind(this));
     },
